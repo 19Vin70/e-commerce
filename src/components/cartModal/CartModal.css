@@ -114,3 +114,11 @@
 .cartContainer .cartModal .total button:hover {
     background: #949494;
 }
+
+
+
+@media (max-width: 600px) {
+    .cartContainer {
+        height: calc(100vh - 120px);
+    }
+}
