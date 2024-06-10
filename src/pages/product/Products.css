@@ -1,0 +1,106 @@
+
+.productContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 20px;
+  padding: 6rem 9%;
+  overflow: hidden;
+}
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.productCard img {
+  width: 100%;
+  height: 250px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.productCard h2 {
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  color: #333;
+  margin: 10px;
+  text-align: center;
+}
+
+.productCard p {
+  font-size: 1rem;
+  color: #666;
+  margin: 10px;
+  text-align: center;
+}
+
+.productCard p:last-child {
+  font-size: 1.2rem;
+  color: #27ae60;
+  font-weight: bold;
+  margin-top: auto;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem;
+}
+
+.modalOverlay .modalContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 0 5em rgba(0, 0, 0, 0.10);
+  gap: 40px;
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  height: 80%;
+}
+
+.modalOverlay .modalContent img {
+  width: 300px;
+}
+
+.modalOverlay .modalContent .closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #333;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modalOverlay .modalContent .closeButton:hover {
+  background: #555;
+}

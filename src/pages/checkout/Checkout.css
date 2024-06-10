@@ -1,0 +1,104 @@
+.checkoutContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 6rem;
+  background: #f7f9fc;
+  min-height: 100vh;
+}
+
+.checkoutDetails, .receipt {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 10px;
+}
+
+.checkoutDetails h2, .receipt h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+form button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #0056b3;
+}
+
+.receiptItem {
+  display: flex;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.receiptItem img {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.receiptItem h3 {
+  margin: 0;
+  color: #333;
+}
+
+.receiptItem p {
+  margin: 0.25rem 0;
+  color: #555;
+}
+
+.total {
+  margin-top: 2rem;
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .checkoutContainer {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+
+  .checkoutDetails, .receipt {
+    margin: 0;
+  }
+}

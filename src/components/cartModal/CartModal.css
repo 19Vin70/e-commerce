@@ -1,0 +1,116 @@
+.cartContainer {
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 400px;
+    height: calc(100vh - 80px);
+    position: fixed;
+    top: 75px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.cartContainer .cartModal {
+    background: #fff;
+    box-shadow: 0 0 5em rgba(0, 0, 0, 0.10);
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.cartContainer .cartModal h2 {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
+.cartContainer .cartModal .cartItems {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.cartContainer .cartModal .cartItems .cartItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.cartContainer .cartModal .cartItems .cartItem img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cartContainer .cartModal .cartItems .cartItem > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.cartContainer .cartModal .cartItems .cartItem > div h3 {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+}
+
+.cartContainer .cartModal .cartItems .cartItem > div p {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    color: #777;
+}
+
+.cartContainer .cartModal .cartItems .cartItem > div .quantityContainer {
+    position: relative;
+}
+
+.cartContainer .cartModal .cartItems .cartItem > div .quantityContainer .quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cartContainer .cartModal .cartItems .cartItem > div .quantityContainer .quantity button {
+    background: #f1f1f1;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cartContainer .cartModal .total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.cartContainer .cartModal .total h3 {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+}
+
+.cartContainer .cartModal .total button {
+    padding: 10px 20px;
+    background: #777;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: clamp(.9rem, 2vw, 1rem);
+    letter-spacing: 1px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.cartContainer .cartModal .total button:hover {
+    background: #949494;
+}

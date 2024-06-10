@@ -1,0 +1,146 @@
+.navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5em rgba(0, 0, 0, 0.10);
+    padding: 20px 30px;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+
+.navbarContainer .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.navbarContainer .logo span {
+    color: #ff4500;
+}
+
+.navbarContainer .navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbarContainer .navbar .navLink {
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.navbarContainer .navbar .navLink:hover {
+    color: #ff4500;
+}
+
+.navbarContainer .cartIcon {
+    position: relative;
+    cursor: pointer;
+}
+
+.navbarContainer .cartIcon .icon i {
+    font-size: 1.5rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.navbarContainer .cartIcon .icon i:hover {
+    color: #ff4500;
+}
+
+.navbarContainer .cartIcon .cartCount {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #ff4500;
+    color: #fff;
+    font-size: 0.8rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbarContainer .cartContainer {
+    position: absolute;
+    top: 100%;
+    right: 0;
+}
+
+.menuToggle {
+  display: none;
+  cursor: pointer;
+}
+
+.menuToggle.active .hamburger .line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menuToggle.active .hamburger .line:nth-child(2) {
+  opacity: 0;
+}
+
+.menuToggle.active .hamburger .line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.hamburger {
+  width: 25px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  .menuToggle {
+    display: block;
+  }
+
+  .navbarContainer .navbar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbarContainer .navbar.active {
+    display: flex;
+  }
+
+  .navbarContainer .navLink {
+    padding: 5px 20px;
+  }
+}
