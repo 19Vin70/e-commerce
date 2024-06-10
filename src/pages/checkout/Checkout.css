@@ -92,7 +92,7 @@ form button:hover {
 
 @media (max-width: 768px) {
   .checkoutContainer {
-    padding: 2rem;
+    padding: 6rem 2%;
     display: flex;
     flex-direction: column-reverse;
     gap: 30px;
