@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import useAddToCart from '../../components/useAddToCart/useAddToCart';
 import './Products.css';
 
-const Products = ({ addToCart }) => {
+const Products = ({ addToCart, isAuthenticated, showLoginModal }) => {
   const [products, setProducts] = useState([]);
-  const handleAddToCart = useAddToCart( addToCart );
+  const handleAddToCart = useAddToCart(addToCart);
 
   const fetchProducts = async () => {
     try {
@@ -14,6 +14,14 @@ const Products = ({ addToCart }) => {
       setProducts(response.data);
     } catch (error) {
       console.log(error);
+    }
+  };
+
+  const handleAddToCartClick = (product) => {
+    if (isAuthenticated) {
+      handleAddToCart(product);
+    } else {
+      showLoginModal();
     }
   };
 
@@ -27,9 +35,16 @@ const Products = ({ addToCart }) => {
         <Link key={product.id} to={`/products/${product.id}`} className='productCard'>
           <img src={product.image} alt={product.title} />
           <div className="productDetails">
-            <h2>{product.title}</h2>
+            <h2>{product.title.slice(0, 20)}{product.title.length > 20 ? "..." : ""}</h2>
             <p>${product.price}</p>
-            <button onClick={(e) => { e.stopPropagation(); handleAddToCart(product); }} style={{zIndex: 9999, padding: '8px 10px'}}>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                handleAddToCartClick(product);
+              }}
+              style={{ zIndex: 9999, padding: '8px 10px' }}
+            >
               Add to Cart
             </button>
           </div>

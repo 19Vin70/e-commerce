@@ -36,6 +36,7 @@
     flex-direction: column;
     gap: 20px;
     width: 100%;
+    overflow-y: auto;
 }
 
 .cartContainer .cartModal .cartItems .cartItem {

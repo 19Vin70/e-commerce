@@ -1,0 +1,142 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalOverlay .modalContent {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 5px;
+    position: relative;
+}
+
+.modalOverlay .modalContent .closeLogin {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    background: #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+}
+
+.modalOverlay .modalContent .closeLogin:hover {
+    background: #ddd;
+}
+
+.modalOverlay .modalContent .loginText {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modalOverlay .modalContent .loginText h2 {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.modalOverlay .modalContent .loginText p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.modalOverlay .modalContent form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.modalOverlay .modalContent form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.modalOverlay .modalContent form > div label {
+    font-size: clamp(.8rem, 2vw, 1rem);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.modalOverlay .modalContent form > div input {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.modalOverlay .modalContent form button {
+    padding: 10px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    font-size: clamp(.8rem, 2vw, 1rem);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.modalOverlay .modalContent form button:hover {
+    background: #333;
+}
+
+.modalOverlay .modalContent form .switchButton {
+    background: transparent;
+    color: #000;
+    text-decoration: underline;
+    padding: 0;
+    margin-left: -10px;
+    margin-top: -3px;
+}
+
+.modalOverlay .modalContent form .switchButton:hover {
+    background: none;
+}
+
+
+
+
+
+
+@media (max-width: 600px) {
+    .modalOverlay {
+        padding: 6rem 2% 2rem;
+    }
+
+    .modalOverlay .modalContent {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 0;
+        flex-direction: column;
+    }
+
+    .modalOverlay .modalContent .closeLogin {
+        top: 10px;
+        right: 10px;
+        width: fit-content;
+        margin-left: auto;
+    }
+
+    .modalOverlay .modalContent form {
+        max-width: 100%;
+    }
+}
