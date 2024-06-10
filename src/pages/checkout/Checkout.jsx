@@ -1,9 +1,11 @@
 import React from 'react';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 import './Checkout.css';
 
 const Checkout = ({ cartItems }) => {
-  const total = cartItems.reduce((acc, item) => acc + (item.quantity * item.price), 0);
+  const total = cartItems.reduce( ( acc, item ) => acc + ( item.quantity * item.price ), 0 );
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,7 +27,7 @@ const Checkout = ({ cartItems }) => {
         confirmButton: 'custom-swal-confirm-button'
       }
     }).then(() => {
-      window.location.href = '/products';
+      navigate('/products');
     });
   };
 

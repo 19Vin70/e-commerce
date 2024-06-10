@@ -6,7 +6,7 @@ import './Products.css';
 
 const Products = ({ addToCart }) => {
   const [products, setProducts] = useState([]);
-  const handleAddToCart = useAddToCart(addToCart);
+  const handleAddToCart = useAddToCart( addToCart );
 
   const fetchProducts = async () => {
     try {
