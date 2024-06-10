@@ -10,7 +10,11 @@ import ProductDetails from './pages/productDetails/ProductDetails';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
-  const [cartModal, setCartModal] = useState(false);
+  const [ cartModal, setCartModal ] = useState( false );
+
+  const clearCart = () => {
+    setCartItems([]);
+  };
 
   const handleCart = () => {
     setCartModal(!cartModal);
@@ -36,7 +40,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products addToCart={addToCart} />} />
         <Route path="/products/:productId" element={<ProductDetails addToCart={addToCart} />} />
-        <Route path="/checkout" element={<Checkout cartItems={cartItems} />} />
+        <Route path="/checkout" element={<Checkout cartItems={cartItems} clearCart={clearCart} />} />
       </Routes>
       {cartModal && <CartModal cartItems={cartItems} setCartItems={setCartItems} />}
     </>

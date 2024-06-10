@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import './Checkout.css';
 
-const Checkout = ({ cartItems }) => {
-  const total = cartItems.reduce( ( acc, item ) => acc + ( item.quantity * item.price ), 0 );
+const Checkout = ({ cartItems, clearCart }) => {
+  const total = cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0);
   const navigate = useNavigate();
+  const [paymentMethod, setPaymentMethod] = useState('credit');
+  const [additionalInfo, setAdditionalInfo] = useState('');
+
+  const handlePaymentChange = (e) => {
+    setPaymentMethod(e.target.value);
+    setAdditionalInfo('');
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,16 +31,17 @@ const Checkout = ({ cartItems }) => {
         popup: 'custom-swal-popup',
         title: 'custom-swal-title',
         content: 'custom-swal-content',
-        confirmButton: 'custom-swal-confirm-button'
-      }
+        confirmButton: 'custom-swal-confirm-button',
+      },
     }).then(() => {
+      clearCart();
       navigate('/products');
     });
   };
 
   return (
-    <div className='checkoutContainer'>
-      <div className='checkoutDetails'>
+    <div className="checkoutContainer">
+      <div className="checkoutDetails">
         <h2>Checkout</h2>
         <form onSubmit={handleSubmit}>
           <label>
@@ -46,19 +54,31 @@ const Checkout = ({ cartItems }) => {
           </label>
           <label>
             Payment Method:
-            <select name="payment" required>
+            <select name="payment" required onChange={handlePaymentChange}>
               <option value="credit">Credit Card</option>
               <option value="paypal">PayPal</option>
               <option value="cash">Cash on Delivery</option>
             </select>
           </label>
+          {paymentMethod === 'credit' && (
+            <label>
+              Credit Card Number:
+              <input type="text" name="cardNumber" required />
+            </label>
+          )}
+          {paymentMethod === 'paypal' && (
+            <label>
+              PayPal Email:
+              <input type="email" name="paypalEmail" required />
+            </label>
+          )}
           <button type="submit">Place Order</button>
         </form>
       </div>
-      <div className='receipt'>
+      <div className="receipt">
         <h2>Receipt</h2>
         {cartItems.map((item, index) => (
-          <div key={index} className='receiptItem'>
+          <div key={index} className="receiptItem">
             <img src={item.image} alt={item.title} />
             <div>
               <h3>{item.title}</h3>
@@ -68,7 +88,7 @@ const Checkout = ({ cartItems }) => {
             </div>
           </div>
         ))}
-        <div className='total'>
+        <div className="total">
           <h3>Total: ${total.toFixed(2)}</h3>
         </div>
       </div>
