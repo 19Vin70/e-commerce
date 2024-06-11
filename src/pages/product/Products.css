@@ -1,8 +1,26 @@
+.container {
+  padding: 6rem 0%;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5em rgba(0, 0, 0, 0.10);
+  width: 100%;
+  max-width: 400px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  outline: none;
+  background: #fff;
+}
 
 .productContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 20px;
+  grid-gap: 40px;
   padding: 6rem 9%;
   overflow: hidden;
 }

@@ -81,7 +81,7 @@ const Checkout = ({ cartItems, clearCart }) => {
           <div key={index} className="receiptItem">
             <img src={item.image} alt={item.title} />
             <div>
-              <h3>{item.title}</h3>
+              <h3>{ item.title }</h3>
               <p>Price: ${item.price}</p>
               <p>Quantity: {item.quantity}</p>
               <p>Total Price: ${(item.price * item.quantity).toFixed(2)}</p>
